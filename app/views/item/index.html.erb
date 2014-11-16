@@ -1,3 +1,12 @@
-<% @items.first(10).each do |item| %>
+<div id="search_form_box">
+  <form class="form-search" action="/search" method="get" role="search">
+    <input class="input-medium search-query" name="q" placeholder="Search" type="text" value="<%= params[:q] %>">
+    <input class="btn" alt="検索" value="検索" type="submit">
+  </form>
+</div>
+
+<h1>ベジタリアンフード</h1>
+
+<% @items.first(100).each do |item| %>
    <%= "#{item['itemName']}, #{item.price} yen" %>
 <% end %>

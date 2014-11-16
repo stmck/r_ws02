@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :item
 
+  get 'item/index'
+  root 'item#index'
+
+  match '/item', to: 'item#search', via: 'get'
+  #match "item" => "item#search"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
