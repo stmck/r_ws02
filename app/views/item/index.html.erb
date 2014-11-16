@@ -1,5 +1,5 @@
 <div id="search_form_box">
-  <form class="form-search" action="/search" method="get" role="search">
+  <form class="form-search" action="/item" method="get" role="search">
     <input class="input-medium search-query" name="q" placeholder="Search" type="text" value="<%= params[:q] %>">
     <input class="btn" alt="検索" value="検索" type="submit">
   </form>
@@ -8,5 +8,10 @@
 <h1>ベジタリアンフード</h1>
 
 <% @items.first(100).each do |item| %>
+
+
+<% if item['itemName'].include?(@search_word) %>
    <%= "#{item['itemName']}, #{item.price} yen" %>
+<% end %>
+
 <% end %>
