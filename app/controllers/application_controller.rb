@@ -8,7 +8,7 @@ def appid
   c.affiliate_id = Rails.application.secrets.rakuten_affiliate_id
   end
 end
-
+  layout 'flatly'
   protect_from_forgery with: :exception
 end
 
