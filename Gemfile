@@ -12,6 +12,12 @@ end
 gem 'twitter-bootswatch-rails-helpers'
 
 gem "ransack"
+
+gem 'twitter-bootswatch-rails', '~> 3.1.1'
+gem 'twitter-bootswatch-rails-helpers'
+gem 'execjs'
+gem 'less-rails'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

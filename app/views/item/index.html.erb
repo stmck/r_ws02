@@ -1,3 +1,5 @@
+<h1>ベジタリアンフード検索</h1>
+
 <div id="search_form_box">
   <form class="form-search" action="/item" method="get" role="search">
     <input class="input-medium search-query" name="q" placeholder="Search" type="text" value="<%= params[:q] %>">
@@ -5,13 +7,14 @@
   </form>
 </div>
 
-<h1>ベジタリアンフード</h1>
-
 <% @new_items.each do |item| %>
 
 
 <%# if item['itemName'].include?(@search_word) %>
-   <%= "#{item['itemName']}, #{item.price} yen" %>
+<ul>
+	<li><%= "#{item['itemName']}, #{item.price} yen" %></li>
+</ul>
+   
 <%# end %>
 
 <% end %>
