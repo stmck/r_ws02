@@ -4,13 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 gem 'rakuten_web_service'
 
-group :assets do
-    gem 'twitter-bootswatch-rails'
-
-end
-
-gem 'twitter-bootswatch-rails-helpers'
-
 gem "ransack"
 
 gem 'twitter-bootswatch-rails', '~> 3.1.1'
