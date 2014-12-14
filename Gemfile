@@ -5,12 +5,8 @@ gem 'rails', '4.1.6'
 gem 'rakuten_web_service'
 gem "ransack"
 
-
-gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails', '~> 3.1.1'
 gem 'twitter-bootswatch-rails-helpers'
-
-#gem 'twitter-bootswatch-rails', '~> 3.1.1'
-#gem 'twitter-bootswatch-rails-helpers'
 gem 'execjs'
 gem 'less-rails'
 
