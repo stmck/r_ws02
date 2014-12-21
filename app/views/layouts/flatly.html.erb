@@ -12,6 +12,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
     <%= stylesheet_link_tag "flatly", :media => "all" %>
+    <%= stylesheet_link_tag "item", :media => "all" %>
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
@@ -19,7 +20,7 @@
   <body>
   
    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse">
+    <div class="navbar-inverse"> <!--←ここのnavbarをとると、角丸がとれたnavi-->
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,26 +28,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Home</a>
+          <a class="navbar-brand" href="./">Home</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          
+          <ul class="nav navbar-nav navbar-right">
             <!--<li class="active"><a href="#">Home</a></li>-->
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">設定<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">ログイン</a></li>
                 <li class="divider"></li>
                 <li><a href="#">新規会員登録</a></li>
-                 <!--<li><a href="#"></a></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>-->
               </ul>
             </li>
           </ul>
+
         </div><!--/.nav-collapse -->
       </div>
     </div>
@@ -55,87 +54,35 @@
     <div class="container theme-showcase">
 
       <div class="page-header">
-        <h1>ベジタリアン用の商品検索</h1>
+        <h1>ベジタリアン専用の商品検索</h1>
+
+        <form class="form-search" action="/item" method="get" role="search">
+            <input class="input-medium search-query" name="q" placeholder="キーワードを入力" type="text" value="<%= params[:q] %>">
+
+            <input class="btn" alt="検索" value="検索" type="submit">
+        </form>
       </div>
       <div class="well">
         <p>楽天で取り扱いのある商品から、ベジタリアンでも対応可能な商品を表示しています。
-          検索フォームからキーワードをいれていただくと、詳細に検索ができます。</p>
+          検索フォームからキーワードをいれると、詳細に検索ができます。</p>
+          
       </div>
+ 
 
-        <%= yield %>
+          <%= yield %>
 
-
-      <div class="page-header">
-        <h1>Panels</h1>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-        <div class="col-sm-4">
-          <div class="panel panel-warning">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-          <div class="panel panel-danger">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-      </div>
 
     </div> <!-- /container -->
-   <footer>
-     <ul class="dropdown-menu">
-                  <li><a href="#">ログイン</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">新規会員登録</a></li>
-                   <!--<li><a href="#"></a></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>-->
+   <footer class="cf">
+     <ul class="fl col-sm-5">
+          <li><a href="./">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>                
      </ul>
+
+    <p class="Footer-bottom">
+        copyright &copy; vegeres all right reserved.
+    </p>
    </footer>
 
     <!-- Javascripts
