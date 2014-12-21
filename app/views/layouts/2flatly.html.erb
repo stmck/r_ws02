@@ -92,5 +92,23 @@
     <%= javascript_include_tag "item" %>
     <%= yield(:page_javascript) if content_for?(:page_javascript) %>
     
+    <!--==========name省略==========-->
+    
+  function omission(){
+    var count = 10;
+      $(".list_content span").each(function() {
+        var thisText = $(this).text();
+        var textLength = thisText.length;
+        if (textLength > count) {
+          var showText = thisText.substring(0, count);
+          var insertText = showText;
+          insertText += '<i class="omit">…</i>';
+          $(this).html(insertText);
+        };
+      });
+    };
+  omission();
+  }); 
+
   </body>
 </html>

@@ -10,10 +10,17 @@
 
 
 <%# if item['itemName'].include?(@search_word) %>
-<ul>
-	<li><%= "#{item['itemName']}, #{item.price} yen" %></li>
-</ul>
+<ul class="cf">
+	<li class="item_ph col-sm-2 col-xs-12"><%= image_tag(item['mediumImageUrl'], :alt => "商品画像") %></li>
+
+	<ul class="col-sm-10 col-xs-12">
+
+		<li class="list_content "><a href="['itemUrl']"><span><%= "#{item['itemName']}" %></span></a></li>
+		<li class="list_p">価格：<%= "#{item.price} 円" %><li>
+	</ul>
+</ul> 
    
 <%# end %>
 
 <% end %>
+
