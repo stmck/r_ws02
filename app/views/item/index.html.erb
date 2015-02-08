@@ -10,7 +10,8 @@
 
 <%# if item['itemName'].include?(@search_word) %>
 <ul class="cf">
-	<li class="col-sm-2 col-xs-12"><a href="<%= item['itemUrl'] %>"><%= image_tag("item[mediumImageUrls][0]", :alt => "画像") %></a></li>
+	<li class="col-sm-2 col-xs-12"><a href="<%= item['itemUrl'] %>">
+		<%= image_tag(item["mediumImageUrls"][0]["imageUrl"], :alt => "image") %></a></li>
 
 	<ul class="col-sm-10 col-xs-12">
 		<li class="list_content "><a href="<%= item['itemUrl'] %>"><span><%= "#{item['itemName']}" %></span></a></li>
