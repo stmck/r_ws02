@@ -5,8 +5,8 @@ class ItemController < ApplicationController
 		#binding.pry
 		@search_word = URI.decode(params[:q].to_s)
 		@new_items = Array.new
-		@items.first(50).each do |item| 
-			if item['itemName'].include?(@search_word) 
+		@items.first(80).each do |item| 
+			if item['itemName'].include?(@search_word) and !(item['itemName'].include?("ドッグ"))
 				@new_items.push (item)
 			end 
 		end
